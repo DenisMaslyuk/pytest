@@ -1,7 +1,20 @@
 import math_func
 import pytest
-import sys
 
+
+@pytest.mark.parametrize('math_add',
+                         [[math_func.add(7, 3),10],
+                          [math_func.add(7),9],
+                          [math_func.add(-7, -3),-10],
+                          [math_func.add(-7, 3),-4],
+                          [math_func.add(7.3, 3.3),10.6],
+                          [math_func.add(7, -3),4],
+                          [math_func.add(7.3, 3),10.3],
+                          [math_func.add(7, 3.4),10.4],
+                          ])
+def test_add_2(math_add):
+    math_adds = math_add
+    assert math_adds[0] ==math_adds[1]
 
 def test_add():
     assert math_func.add(7, 3) == 10
